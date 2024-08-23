@@ -10,7 +10,6 @@ import { ApiResponse } from '@/types/ApiResponse'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { AxiosError } from 'axios'
 import { Loader2, RefreshCcw } from 'lucide-react'
-import { User } from 'next-auth'
 import { useSession } from 'next-auth/react'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -122,7 +121,19 @@ function page() {
   }
 
   if (!session || !session.user) {
-    return <div className='w-screen flex justify-center items-center h-[80vh]'><span className="loading loading-dots loading-lg"></span></div>
+    return (
+      <div className='w-screen flex justify-center items-center h-[80vh]'>
+        <div className="flex-col gap-4 w-full flex items-center justify-center">
+          <div
+            className="w-20 h-20 border-4 border-transparent text-blue-400 text-4xl animate-spin flex items-center justify-center border-t-blue-400 rounded-full"
+          >
+            <div
+              className="w-16 h-16 border-4 border-transparent text-red-400 text-2xl animate-spin flex items-center justify-center border-t-red-400 rounded-full"
+            ></div>
+          </div>
+        </div>
+      </div>
+    )
   }
     return (
       <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 bg-white rounded w-full max-w-6xl">
