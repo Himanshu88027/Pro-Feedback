@@ -13,6 +13,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from '@/components/ui/input'
 import { Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 function Signup() {
     const [username, setUsername] = useState('')
@@ -84,7 +85,7 @@ function Signup() {
     }
   return (
     <div className='h-screen w-full flex justify-center items-center bg-slate-900 p-4'>
-        <div className='sm:w-1/3 w-full h-full rounded-3xl bg-white py-4 px-6 space-y-4'>
+        <div className='sm:w-1/3 w-full h-full rounded-3xl bg-white py-4 px-6 space-y-8'>
         <div className='text-center tracking-tighter space-y-4'>
             <h1 className='text-5xl font-extrabold text-center'>Join Pro Feedback</h1>
             <p className='text-lg tracking-normal'>Signup to send anonymous messages</p>
@@ -161,6 +162,10 @@ function Signup() {
                     </Button>
                 </form>
             </Form>
+            <p className="text-center">
+                Already a member?
+                <Link href='/sign-in' className="text-blue-500"> Sign-in</Link>
+            </p>
         </div>
     </div>
   )
