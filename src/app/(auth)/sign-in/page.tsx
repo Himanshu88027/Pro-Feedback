@@ -119,7 +119,7 @@ function Signup() {
         </Form>
         <p className="text-center">
           Not a member yet?
-          <Link href='/sign-up' className="text-blue-500"> Sign-up</Link>
+          <Link href='/sign-up' className="text-blue-500"> Sign-in</Link>
         </p>
       </div>
     </div>
