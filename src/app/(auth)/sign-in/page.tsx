@@ -55,11 +55,14 @@ function Signup() {
         });
       }
     }
-
     if (result?.url) {
       router.replace("/dashboard");
     }
 
+    toast({
+      title: "Success",
+      description: "You have successfully signed up!",
+    })
     setIsSubmitting(false);
   };
   return (

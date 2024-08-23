@@ -10,7 +10,7 @@ export const authOptions: NextAuthOptions = {
       id: "credentials",
       name: "Credentials",
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "Username" },
+        email: { label: "Username", type: "text", placeholder: "Username" },
         password: { label: "Password", type: "password", placeholder: "Password" },
       },
       async authorize(credentials: any): Promise<any> {
@@ -34,7 +34,6 @@ export const authOptions: NextAuthOptions = {
             credentials.password,
             user.password
           );
-
           if (isPasswordCorrect) {
             return user;
           } else {
@@ -54,6 +53,7 @@ export const authOptions: NextAuthOptions = {
         token.isVerified = user.isVerified;
         token.isAcceptingMessage = user.isAcceptingMessage;
       }
+      // console.log("token are receiving", token)
       return token;
     },
     async session({ session, token }) {
@@ -72,5 +72,5 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXT_AUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
 };

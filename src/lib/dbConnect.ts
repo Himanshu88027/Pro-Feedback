@@ -9,7 +9,7 @@ const connection: ConnectionObject = {};
 async function dbConnect() {
     // check if we have a database connection if it's currently connecting
     if (connection.isConnected) {
-        console.log('Already connected to databse');
+        console.log('Already connected to database');
         return;
     }
 

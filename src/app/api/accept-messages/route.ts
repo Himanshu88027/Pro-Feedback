@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   await dbConnect();
 
   const session = await getServerSession(authOptions);
-  console.log(session);
+  // console.log(session);
 
   const user:any = session?.user;
   if (!session || !session.user) {
@@ -62,7 +62,7 @@ export async function GET(request: Request) {
     await dbConnect();
   
     const session = await getServerSession(authOptions);
-    console.log(session);
+    // console.log(session);
   
     const user:any = session?.user;
     if (!session || !user) {
