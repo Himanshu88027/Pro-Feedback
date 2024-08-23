@@ -18,6 +18,7 @@ import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signInSchemas } from "@/schemas/signInSchemas";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 function Signup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,13 +68,13 @@ function Signup() {
   };
   return (
     <div className="h-screen w-full flex justify-center items-center bg-slate-900 p-4">
-      <div className="sm:w-1/3 w-full h-full rounded-3xl bg-white py-4 px-6 space-y-4">
+      <div className="sm:w-1/3 w-full h-full rounded-3xl bg-white py-4 px-6 space-y-8">
         <div className="text-center tracking-tighter space-y-4">
-          <h1 className="text-5xl font-extrabold text-center">
-            Join Pro Feedback
+          <h1 className="text-5xl font-extrabold flex flex-col text-center">
+            <span>Welcome Back</span> <span>to True</span> Feedback
           </h1>
           <p className="text-lg tracking-normal">
-            Signup to send anonymous messages
+            Sign in to continue your secret conversations
           </p>
         </div>
         <Form {...form}>
@@ -116,6 +117,10 @@ function Signup() {
             </Button>
           </form>
         </Form>
+        <p className="text-center">
+          Not a member yet?
+          <Link href='/sign-up' className="text-blue-500"> Sign-up</Link>
+        </p>
       </div>
     </div>
   );
