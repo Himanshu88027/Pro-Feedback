@@ -12,7 +12,7 @@ import axios, { AxiosError } from 'axios';
 import { useToast } from '@/components/ui/use-toast';
 import { ApiResponse } from '@/types/ApiResponse';
 
-function page() {
+export default function VerifyCode() {
     const router = useRouter()
     const params = useParams<{username: string}>()
     const { toast } = useToast()
@@ -76,5 +76,3 @@ function page() {
     </div>
   )
 }
-
-export default page

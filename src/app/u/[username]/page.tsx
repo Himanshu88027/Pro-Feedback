@@ -33,7 +33,7 @@ const pasreMessageString = (messageString: string): string[] => {
 const initialMessageString =
   "What's your favorite movie?||Do you have any pets?||What's your dream job?";
 
-function page() {
+export default function Profile() {
   const params = useParams<{ username: string }>();
   const username = params.username;
   const [isLoading, setIsLoading] = useState(false);
@@ -191,4 +191,3 @@ function page() {
   );
 }
 
-export default page;
