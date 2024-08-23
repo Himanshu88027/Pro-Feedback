@@ -106,8 +106,12 @@ function page() {
   }
 
   const username = session?.user.username;
-  const baseUrl = `${window.location.protocol}/${window.location.host}`
-  const profileUrl = `${baseUrl}/u/${username}`
+  let baseUrl = "";
+  if (typeof window !== "undefined") {
+    baseUrl = `${window.location.protocol}//${window.location.host}`;
+  }
+
+  const profileUrl = `${baseUrl}/u/${username}`;
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(profileUrl)
