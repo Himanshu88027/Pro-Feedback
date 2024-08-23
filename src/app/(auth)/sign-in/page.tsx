@@ -112,14 +112,14 @@ function Signup() {
                   Please wait
                 </>
               ) : (
-                "Signup"
+                "Signin"
               )}
             </Button>
           </form>
         </Form>
         <p className="text-center">
           Not a member yet?
-          <Link href='/sign-up' className="text-blue-500"> Sign-in</Link>
+          <Link href='/sign-up' className="text-blue-500"> Sign-up</Link>
         </p>
       </div>
     </div>
